@@ -18,7 +18,7 @@ Go to the [Releases](../../releases) page and download `Ginseng.exe`. No install
 
 Windows may show a SmartScreen warning because the program isn't signed. Click **More info**, then **Run anyway**.
 
-## Run from source
+## Run from source / Windows
 
 You need Python 3.9 or newer. Keep `gematria.py`, `history.py` and `logo_data.py` in the same folder, then run:
 
@@ -38,3 +38,29 @@ The program ends up in the `dist` folder.
 ## Where your data is stored
 
 Your history and settings are saved in your user folder (`.gematria_calculator.json` and `.gematria_settings.json`).
+
+## Linux Download
+
+The program runs from source on Linux. You need Python 3.9 or newer with Tk.
+
+Install Tk if it's missing:
+
+    # Debian / Ubuntu
+    sudo apt install python3-tk
+
+    # Fedora
+    sudo dnf install python3-tkinter
+
+    # Arch
+    sudo pacman -S tk
+
+Then, from the folder with the files:
+
+    python3 gematria.py
+
+To make a standalone Linux program, build it on a Linux machine:
+
+    pip install pyinstaller
+    python3 -m PyInstaller --onefile --windowed --name Ginseng gematria.py
+
+The result is `dist/Ginseng`.
